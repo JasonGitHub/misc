@@ -1,10 +1,3 @@
-#include <iostream>
-#include <sstream>
-#include <vector>
-#include <cassert>
-
-using namespace std;
-
 // Boyer and Moore's Majority Vote Algorithm
 // http://www.cs.utexas.edu/~moore/best-ideas/mjrty/example.html
 
@@ -26,17 +19,4 @@ int FindMajority(const vector<int> &ivec) {
   }
   assert(IsMajority(ivec, cand));
   return cand;
-}
-
-int main() {
-  string line;
-  while (getline(cin, line)) {
-    vector<int> ivec;
-    int i;
-    stringstream ss(line);
-    while (ss >> i)
-      ivec.push_back(i);
-    cout << FindMajority(ivec) << endl;
-  }
-  return 0;
 }
